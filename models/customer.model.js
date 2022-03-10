@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+const mongoose =  require('mongoose')
 
 const customerSchema = mongoose.Schema({
     CustomerID: String,
@@ -11,8 +11,10 @@ const customerSchema = mongoose.Schema({
     PostalCode: Number,
     City: String,
     Country: String
+}, {
+    timestamps: true
 });
 
 const CustomerMessage = mongoose.model('Customer', customerSchema);
 
-export default CustomerMessage;
+module.exports = CustomerMessage;
