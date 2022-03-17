@@ -68,13 +68,7 @@ const loginUser = asyncHandler( async (req, res) => {
 // @route GET /api/users/me
 // @access Private 
 const getMe = asyncHandler( async (req, res) => {
-    const {_id, Name, Email} = await UserModel.findById(req.user.id)
-
-    res.status(200).json({
-        Id: _id,
-        Name,
-        Email 
-    })
+    res.status(200).json(req.user)
 })
 
 const generateToken = (userId) => {

@@ -39,6 +39,7 @@ const createCustomer = asyncHandler( async (req, res) => {
 // @route PUT /api/customer/:id
 // @access Private
 const updateCustomer = asyncHandler( async (req, res) => {
+    //ToDO: .....
     const customer = req.body;
     
     const newCustomer = new CustomerMessage(customer);
@@ -56,6 +57,7 @@ const updateCustomer = asyncHandler( async (req, res) => {
 // @route Delete /api/customer
 // @access Private
 const deleteCustomer = asyncHandler( async (req, res) => {
+    //ToDO: .....
     const customer = req.body;
     
     const newCustomer = new CustomerMessage(customer);
