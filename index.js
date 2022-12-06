@@ -5,6 +5,7 @@ const colors =  require('colors')
 const {connectDB} = require('./config/db')
 const {errorHandler} = require('./middleware/errorMiddleware')
 const customerRoutes =  require('./routes/customerRoutes.js')
+const projectRoutes =  require('./routes/projectRoutes.js')
 const userRoutes =  require('./routes/userRoutes.js')
 
 connectDB()
@@ -16,6 +17,7 @@ app.use(express.urlencoded({extended: false}))
 app.use(errorHandler);
 
 app.use('/api/customer', customerRoutes);
+app.use('/api/project', projectRoutes);
 app.use('/api/users', userRoutes);
 
 const port = process.env.PORT || 5000;
