@@ -10,22 +10,6 @@ const projectSchema = mongoose.Schema(
     BetreuerVertrieb: String,
     BetreuerMontage: String,
     Status: {
-<<<<<<< HEAD
-        type: String,
-        enum : ['Angebots-Erstellung', 
-                'Warten auf Antwort',
-                'Nachverhandlung', 
-                'Änderung durch Kunden', 
-                'Naturmaß messen',
-                'Berechnung',
-                'Lieferungsdatum steht aus', 
-                'Auftrag ersteilt',
-                'Montagetermin festlegen',
-                'In Montage',
-                'Feinheiten',
-                'Fertigstellung'],
-        default: 'Baustellen messen'
-=======
       type: String,
       enum: [
         "Angebots-Erstellung",
@@ -42,7 +26,6 @@ const projectSchema = mongoose.Schema(
         "Fertigstellung",
       ],
       default: "Angebots-Erstellung",
->>>>>>> f18c36c42fb8bcccc6a9875317d3ff1d692cef47
     },
     OrderInfo: {
       TotalAmount: Number,
