@@ -1,20 +1,23 @@
-const mongoose =  require('mongoose')
+const mongoose = require("mongoose");
 
-const customerSchema = mongoose.Schema({
+const customerSchema = mongoose.Schema(
+  {
     CustomerID: String,
     LastName: String,
-    FristName: String,
+    FirstName: String,
     Birthday: Date,
     Email: String,
     TelNum: String,
     Adress: String,
     PostalCode: Number,
     City: String,
-    Country: String
-}, {
-    timestamps: true
-});
+    Country: String,
+  },
+  {
+    timestamps: true,
+  }
+);
 
-const CustomerMessage = mongoose.model('Customer', customerSchema);
+const CustomerMessage = mongoose.model("Customer", customerSchema);
 
 module.exports = CustomerMessage;

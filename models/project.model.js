@@ -1,6 +1,7 @@
-const mongoose =  require('mongoose')
+const mongoose = require("mongoose");
 
-const projectSchema = mongoose.Schema({
+const projectSchema = mongoose.Schema(
+  {
     ProjectNumber: Number,
     Adress: String,
     PostalCode: Number,
@@ -9,41 +10,44 @@ const projectSchema = mongoose.Schema({
     BetreuerVertrieb: String,
     BetreuerMontage: String,
     Status: {
-        type: String,
-        enum : ["Baustellen messen",
-                'Angebots-Erstellung', 
-                'Warten auf Antwort',
-                'Nachverhandlung', 
-                'Änderung durch Kunden', 
-                'Naturmaß messen',
-                'Berechnung',
-                'Lieferungsdatum steht aus', 
-                'Auftrag ersteilt',
-                'Montagetermin festlegen',
-                'In Montage',
-                'Feinheiten',
-                'Fertigstellung'],
-        default: 'Baustellen messen'
+      type: String,
+      enum: [
+        "Angebots-Erstellung",
+        "Warten auf Antwort",
+        "Nachverhandlung",
+        "Änderung durch Kunden",
+        "Auftrag ersteilt",
+        "Naturmaß messen",
+        "Berechnung",
+        "Lieferungsdatum steht aus",
+        "Montagetermin festlegen",
+        "In Montage",
+        "Feinheiten",
+        "Fertigstellung",
+      ],
+      default: "Angebots-Erstellung",
     },
     OrderInfo: {
-        TotalAmount: Number,
-        PaidAmount: Number,
-        OutStandingAmount: Number,
-        BillReminder1: Number,
-        BillReminder2: Number,
-        BillReminder3: Number,
-        Directorypath: String
+      TotalAmount: Number,
+      PaidAmount: Number,
+      OutStandingAmount: Number,
+      BillReminder1: Number,
+      BillReminder2: Number,
+      BillReminder3: Number,
+      Directorypath: String,
     },
-    
+
     Adress: String,
     PostalCode: Number,
     City: String,
     Country: String,
-    CustomerID: {type: mongoose.Schema.Types.ObjectId, ref: 'Customer'},
-}, {
-    timestamps: true
-});
+    CustomerID: { type: mongoose.Schema.Types.ObjectId, ref: "Customer" },
+  },
+  {
+    timestamps: true,
+  }
+);
 
-const ProjectMessage = mongoose.model('Project', projectSchema);
+const ProjectMessage = mongoose.model("Project", projectSchema);
 
 module.exports = ProjectMessage;
