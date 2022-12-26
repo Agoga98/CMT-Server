@@ -10,8 +10,7 @@ const projectSchema = mongoose.Schema({
     BetreuerMontage: String,
     Status: {
         type: String,
-        enum : ["Baustellen messen",
-                'Angebots-Erstellung', 
+        enum : ['Angebots-Erstellung', 
                 'Warten auf Antwort',
                 'Nachverhandlung', 
                 'Änderung durch Kunden', 
